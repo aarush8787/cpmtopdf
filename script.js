@@ -1,3 +1,10 @@
+function http_get(url, callback) {
+  var request = new XMLHttpRequest();
+  request.addEventListener("load", callback);
+  request.open("GET", url, true);
+  request.send();
+}
+
 function save(lesson) {
     var doc = new JsPDF();
     doc.fromHTML($('#lesson').html(), 15, 15, {
